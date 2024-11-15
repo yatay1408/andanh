@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Danh sách IP khả dụng</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Danh sách IP khả dụng</h1>
+        <table>
+            <tr>
+                <th>Tên</th>
+                <th>IP</th>
+            </tr>
+            {% for ip in ips %}
+            <tr>
+                <td>{{ ip[0] }}</td> <!-- Hiển thị tên -->
+                <td>{{ ip[1] }}</td> <!-- Hiển thị IP -->
+            </tr>
+            {% endfor %}
+        </table>
+        
+        <!-- Nút đăng nhập quản trị -->
+        <a href="{{ url_for('login') }}" class="admin-login-button">Đăng nhập quản trị</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,185 @@
+/* Nền ảnh toàn trang */
+body {
+    background-image: url('/static/images/background.jpg');
+    background-size: cover;
+    background-position: center;
+    font-family: Arial, sans-serif;
+    color: red; /* Nền chữ màu đỏ */
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* Container cho form đăng nhập */
+.login-container {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 40px;
+    border-radius: 10px;
+    width: 400px;
+    text-align: center;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* Tiêu đề của form đăng nhập */
+.login-container h1 {
+    color: red;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+/* Định dạng cho form */
+.login-container form {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Định dạng cho các label và input */
+.login-container label {
+    color: red;
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+.login-container input[type="text"],
+.login-container input[type="password"] {
+    padding: 10px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    background: rgba(255, 255, 255, 0.9);
+}
+
+.login-container input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.login-container input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+/* Định dạng cho trang dashboard */
+.container {
+    text-align: center;
+    margin: 20px;
+    width: 80%; /* Điều chỉnh container để mở rộng nền */
+    max-width: 1200px;
+    padding: 40px; /* Tăng padding */
+    background-color: rgba(0, 0, 0, 0.7); /* Nền đen bao quanh cả tiêu đề và bảng */
+    border-radius: 15px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.7);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Định dạng chung cho bảng */
+table {
+    width: 100%; /* Đảm bảo bảng chiếm toàn bộ chiều ngang của container */
+    margin: 20px auto;
+    border-collapse: collapse;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3); /* Thêm chút bóng nhẹ để bảng rõ ràng hơn */
+}
+
+th, td {
+    padding: 15px;
+    border: 1px solid white;
+    text-align: center;
+}
+
+/* Định dạng cho ô nhập tên, tăng kích thước chiều ngang */
+input[type="text"] {
+    width: 400px; /* Tăng chiều ngang cho cột nhập tên */
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Định dạng các nút hành động trong cùng một hàng */
+.action-buttons {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 10px;
+}
+
+.action-buttons a {
+    display: inline-block;
+    padding: 5px 10px;
+    margin: 5px;
+    background-color: #4CAF50;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.action-buttons a:hover {
+    background-color: #45a049;
+}
+
+/* Tiêu đề trang */
+h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+/* Định dạng các nút nằm ngang cho các hành động khác */
+.horizontal-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    gap: 20px;
+}
+
+/* Định dạng lại các nút "Cập nhật danh sách IP", "Cập nhật danh sách instances" và "Đăng xuất" để chúng nằm trên một hàng */
+.horizontal-buttons button, .horizontal-buttons a {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.horizontal-buttons button:hover, .horizontal-buttons a:hover {
+    background-color: #45a049;
+}
+
+/* Định dạng lại cho các thông báo không xuất hiện trên trang đăng nhập */
+.error-message {
+    display: none;
+}
+/* Định dạng nút "Đăng nhập quản trị" để giống với các nút khác */
+.admin-login-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.admin-login-button:hover {
+    background-color: #45a049;
+}

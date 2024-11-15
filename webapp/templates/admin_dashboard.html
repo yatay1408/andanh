@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bảng điều khiển quản trị</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Bảng điều khiển quản trị</h1>
+        <form action="{{ url_for('update_ips_to_show') }}" method="POST">
+            <h3>Chọn IP để hiển thị cho người dùng:</h3>
+            <table>
+                <tr>
+                    <th>Chọn</th>
+                    <th>Tên</th>
+                    <th>IP</th>
+                    <th>Hành động</th>
+                </tr>
+                {% for instance in instances %}
+                <tr>
+                    <td><input type="checkbox" name="selected_ips" value="{{ instance[2] }}" {% if instance[4] == 'show' %}checked{% endif %}></td>
+                    <td><input type="text" name="ip_names_{{ instance[2] }}" value="{{ instance[5] }}"></td> <!-- Nhập tên cho mỗi IP -->
+                    <td>{{ instance[2] }}</td>
+                    <td>
+                        <div class="action-buttons">
+                            <a href="{{ url_for('start_instance', instance_id=instance[1]) }}">Bật</a>
+                            <a href="{{ url_for('stop_instance', instance_id=instance[1]) }}">Tắt</a>
+                            <a href="{{ url_for('delete_instance', instance_id=instance[1]) }}">Xóa</a>
+                        </div>
+                    </td>
+                </tr>
+                {% endfor %}
+            </table>
+            <input type="submit" value="Cập nhật danh sách IP">
+        </form>
+
+        <div class="horizontal-buttons">
+            <button type="button" onclick="window.location.href='{{ url_for('update_instances') }}'">Cập nhật danh sách instances</button>
+            <button type="button" onclick="window.location.href='{{ url_for('logout') }}'">Đăng xuất</button>
+        </div>
+    </div>
+</body>
+</html>
